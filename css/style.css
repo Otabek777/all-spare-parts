@@ -558,12 +558,38 @@ ul, ol {
   padding-top: 65px;
   padding-bottom: 85px;
   background: #F7F7F7;
+  position: relative;
+}
+.payment .container {
+  position: relative;
+  z-index: 1;
+}
+.payment .icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.payment .icon2 {
+  position: absolute;
+  top: -55px;
+  right: -40px;
+  z-index: -1;
+}
+
+.payment-bg {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .payment__box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 .payment__block {
@@ -638,6 +664,7 @@ ul, ol {
   padding: 30px;
   -webkit-box-shadow: 5px 15px 25px rgba(26, 178, 72, 0.4);
           box-shadow: 5px 15px 25px rgba(26, 178, 72, 0.4);
+  overflow: hidden;
 }
 .products__item .title {
   width: 167px;
@@ -646,14 +673,18 @@ ul, ol {
   line-height: 27px;
   color: #FFFFFF;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 .products__item .img {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  right: 17px;
-  opacity: 0.7;
+  left: 0;
+  top: 0;
+}
+.products__item .img img {
+  width: 100%;
 }
 .products__item .btn {
   width: 125px;
@@ -668,6 +699,8 @@ ul, ol {
   color: #FFFFFF;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 .products__item .btn:hover {
   color: #FFFFFF;
@@ -683,6 +716,8 @@ ul, ol {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  z-index: 1;
 }
 .products__item .line span {
   display: block;
@@ -919,6 +954,10 @@ ul, ol {
 }
 
 @media screen and (max-width: 786px) {
+  main {
+    overflow: hidden;
+  }
+
   .container {
     padding: 0 15px;
   }
@@ -1214,10 +1253,16 @@ ul, ol {
   }
 
   .products__item .img {
-    width: 115px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   .products__item .img img {
-    width: 100%;
+    width: auto;
+    height: 100%;
   }
 
   .products__item .title {
